@@ -1,0 +1,61 @@
+.header_login{
+    height: 22px;
+    font-size: 14px;
+    background-color: #dcd3d3;
+    color: #2042d0;
+}
+
+.content_login{
+    height: 600px;
+    background-image: url("../images/login.jpg");
+    background-size: 1250px 600px;
+}
+.name{
+    margin-left: 605px;
+    margin-top: 270px;
+    width: 200px;
+}
+#inputPassword3{
+    width: 126px;
+}
+.pwd{
+    margin-left: 605px;
+    margin-top: -10px;
+}
+#inputName{
+    width: 126px;
+}
+#ro{
+    width: 104px;
+    margin-left: 57px;
+    margin-top: -23px;
+}
+.role{
+    width: 149px;
+    margin-left: 605px;
+    margin-top: -9px;
+}
+.role>span{
+    font-weight: bold;
+}
+.buttons{
+    margin-left: 662px;
+    margin-top: 0px;
+}
+
+.modal-alert{
+    position: fixed;
+    top: 0;
+    z-index: 9999;
+    text-align: center;
+    min-width: 40%;
+    max-width: 60%;
+    left: 50%;
+    margin-left: -300px;
+}
+
+.modal-alert .alert {
+    border-radius: 0 !important;
+    padding: 15px 30px !important;
+    opacity: .9;
+}

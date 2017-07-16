@@ -1,0 +1,24 @@
+.bg_system{
+    height: 600px;
+    background-image: url("../images/chooseSystem.jpg");
+    background-size: 1250px 600px;
+}
+.header_user{
+    height: 22px;
+    font-size: 14px;
+    background-color: #dcd3d3;
+}
+.header_user .r>span{
+    margin-right: 10px;
+}
+.choose_system{
+    position: relative;
+    top: 177px;
+}
+.choose_system>ul{
+    margin-left: 501px;
+    font-size: 36px;
+}
+.choose_system>ul>li{
+    list-style-type: none;
+}
