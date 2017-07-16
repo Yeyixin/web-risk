@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.fzu.edu.dao.UserinfoMapper" >
+  <resultMap id="BaseResultMap" type="com.fzu.edu.model.Userinfo" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="username" property="username" jdbcType="VARCHAR" />
+    <result column="password" property="password" jdbcType="VARCHAR" />
+    <result column="userno" property="userno" jdbcType="VARCHAR" />
+    <result column="sex" property="sex" jdbcType="INTEGER" />
+    <result column="age" property="age" jdbcType="INTEGER" />
+    <result column="createTime" property="createtime" jdbcType="BIGINT" />
+    <result column="modifyTime" property="modifytime" jdbcType="BIGINT" />
+    <result column="isDelete" property="isdelete" jdbcType="INTEGER" />
+    <result column="post" property="post" jdbcType="VARCHAR" />
+    <result column="tel" property="tel" jdbcType="VARCHAR" />
+    <result column="idcard" property="idcard" jdbcType="VARCHAR" />
+    <result column="address" property="address" jdbcType="VARCHAR" />
+    <result column="degrees" property="degrees" jdbcType="VARCHAR" />
+    <result column="describ" property="describ" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, username, password, userno, sex, age, createTime, modifyTime, isDelete, post, 
+    tel, idcard, address, degrees, describ
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from userinfo
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from userinfo
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.fzu.edu.model.Userinfo" >
+    insert into userinfo (id, username, password, 
+      userno, sex, age, createTime, 
+      modifyTime, isDelete, post, 
+      tel, idcard, address, 
+      degrees, describ)
+    values (#{id,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
+      #{userno,jdbcType=VARCHAR}, #{sex,jdbcType=INTEGER}, #{age,jdbcType=INTEGER}, #{createtime,jdbcType=BIGINT}, 
+      #{modifytime,jdbcType=BIGINT}, #{isdelete,jdbcType=INTEGER}, #{post,jdbcType=VARCHAR}, 
+      #{tel,jdbcType=VARCHAR}, #{idcard,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, 
+      #{degrees,jdbcType=VARCHAR}, #{describ,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.fzu.edu.model.Userinfo" >
+    insert into userinfo
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="username != null" >
+        username,
+      </if>
+      <if test="password != null" >
+        password,
+      </if>
+      <if test="userno != null" >
+        userno,
+      </if>
+      <if test="sex != null" >
+        sex,
+      </if>
+      <if test="age != null" >
+        age,
+      </if>
+      <if test="createtime != null" >
+        createTime,
+      </if>
+      <if test="modifytime != null" >
+        modifyTime,
+      </if>
+      <if test="isdelete != null" >
+        isDelete,
+      </if>
+      <if test="post != null" >
+        post,
+      </if>
+      <if test="tel != null" >
+        tel,
+      </if>
+      <if test="idcard != null" >
+        idcard,
+      </if>
+      <if test="address != null" >
+        address,
+      </if>
+      <if test="degrees != null" >
+        degrees,
+      </if>
+      <if test="describ != null" >
+        describ,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="username != null" >
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="userno != null" >
+        #{userno,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null" >
+        #{sex,jdbcType=INTEGER},
+      </if>
+      <if test="age != null" >
+        #{age,jdbcType=INTEGER},
+      </if>
+      <if test="createtime != null" >
+        #{createtime,jdbcType=BIGINT},
+      </if>
+      <if test="modifytime != null" >
+        #{modifytime,jdbcType=BIGINT},
+      </if>
+      <if test="isdelete != null" >
+        #{isdelete,jdbcType=INTEGER},
+      </if>
+      <if test="post != null" >
+        #{post,jdbcType=VARCHAR},
+      </if>
+      <if test="tel != null" >
+        #{tel,jdbcType=VARCHAR},
+      </if>
+      <if test="idcard != null" >
+        #{idcard,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="degrees != null" >
+        #{degrees,jdbcType=VARCHAR},
+      </if>
+      <if test="describ != null" >
+        #{describ,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.fzu.edu.model.Userinfo" >
+    update userinfo
+    <set >
+      <if test="username != null" >
+        username = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        password = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="userno != null" >
+        userno = #{userno,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null" >
+        sex = #{sex,jdbcType=INTEGER},
+      </if>
+      <if test="age != null" >
+        age = #{age,jdbcType=INTEGER},
+      </if>
+      <if test="createtime != null" >
+        createTime = #{createtime,jdbcType=BIGINT},
+      </if>
+      <if test="modifytime != null" >
+        modifyTime = #{modifytime,jdbcType=BIGINT},
+      </if>
+      <if test="isdelete != null" >
+        isDelete = #{isdelete,jdbcType=INTEGER},
+      </if>
+      <if test="post != null" >
+        post = #{post,jdbcType=VARCHAR},
+      </if>
+      <if test="tel != null" >
+        tel = #{tel,jdbcType=VARCHAR},
+      </if>
+      <if test="idcard != null" >
+        idcard = #{idcard,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        address = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="degrees != null" >
+        degrees = #{degrees,jdbcType=VARCHAR},
+      </if>
+      <if test="describ != null" >
+        describ = #{describ,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.fzu.edu.model.Userinfo" >
+    update userinfo
+    set username = #{username,jdbcType=VARCHAR},
+      password = #{password,jdbcType=VARCHAR},
+      userno = #{userno,jdbcType=VARCHAR},
+      sex = #{sex,jdbcType=INTEGER},
+      age = #{age,jdbcType=INTEGER},
+      createTime = #{createtime,jdbcType=BIGINT},
+      modifyTime = #{modifytime,jdbcType=BIGINT},
+      isDelete = #{isdelete,jdbcType=INTEGER},
+      post = #{post,jdbcType=VARCHAR},
+      tel = #{tel,jdbcType=VARCHAR},
+      idcard = #{idcard,jdbcType=VARCHAR},
+      address = #{address,jdbcType=VARCHAR},
+      degrees = #{degrees,jdbcType=VARCHAR},
+      describ = #{describ,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectAllUser" resultMap="BaseResultMap" parameterType="hashmap">
+    SELECT * FROM userinfo  WHERE isDelete = 0
+    <if test="username != null and username !='' " >
+      and username LIKE '%'+#{username}+'%'
+    </if>
+    <if test="userno != null and userno !='' " >
+      and userno '%'+#{userno}+'%'
+    </if>
+    <if test="companyid != null and companyid !='' " >
+      and companyid = #{companyid}
+    </if>
+
+  </select>
+  <update id="delUsers"  parameterType="java.util.List">
+    <foreach collection="list" item="item" index="index" open="" close="" separator=";">
+      update userinfo
+      <set>
+        isDelete= 1
+      </set>
+      where id = ${item}
+    </foreach>
+  </update>
+
+
+
+</mapper>
