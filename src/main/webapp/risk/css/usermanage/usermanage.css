@@ -1,0 +1,15 @@
+.clear{clear:both;}
+
+.gridBtn{
+    margin-right:3px;
+}
+.searchBox{
+    float: right;
+}
+
+.havetoIcon{
+    position:absolute;
+    left:5px;
+    top:8px;
+    color:#f00;
+}

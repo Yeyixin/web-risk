@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>风险管控系统平台首页</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <link type="text/css" rel="stylesheet" href="common/assets/css/bootstrap.min.css">
+    <script type="text/javascript" src="common/js/lib/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="common/js/lib/bootstrap.min.js"></script>
+    <script type="text/javascript" src="common/dist/libs.js"></script>
+    <script type="text/javascript" src="common/js/lib/angular-locale_zh-cn.js"></script>
+    <script type="text/javascript" src="common/js/lib/angular-local-storage.js"></script>
+    <link type="text/css" rel="stylesheet" href="common/risk/all.min.css">
+    <script type="text/javascript" src="login.js"></script>
+</head>
+<body ng-app="riskLogin">
+    <div class="modal-alert">
+        <uib-alert ng-repeat="alert in alerts" ng-if="alert.isAble" type="{{alert.type}}" close="closeAlert($index)" class="slide-down">{{alert.msg}}</uib-alert>
+    </div>
+    <div ui-view></div>
+
+</body>
+</html>
